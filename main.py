@@ -8,8 +8,8 @@ import librosa.display
 from scipy.signal import argrelextrema
 
 import msvcrt
-from utils.parser import arguments
 
+from utils.parser import arguments
 from utils.audio import *
 from utils.Sazham import *
 from utils.basedatos import *

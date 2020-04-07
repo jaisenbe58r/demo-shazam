@@ -1,0 +1,10 @@
+numpy
+pandas
+librosa
+matplotlib
+scipy
+msvcrt
+playsound
+sounddevice
+pyaudio
+wave

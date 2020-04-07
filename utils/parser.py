@@ -22,6 +22,12 @@ def arguments():
         default="Default",
         help="Nombre del archivo",
     )
+    argparser.add_argument(
+        "--direct",
+        type=str,
+        default="Default",
+        help="Ruta del archivo",
+    )
     
 
     args = argparser.parse_args()

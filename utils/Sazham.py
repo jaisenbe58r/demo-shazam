@@ -137,7 +137,7 @@ def create_data(Xdb, max_locales, cc, ut):
     return df
 
 
-def create_fingerprint(filename, display=True, test=False, n_fft=2048, hop_length=512, percentil=90, 
+def create_fingerprint(filename, name="Default", display=True, test=False, n_fft=2048, hop_length=512, percentil=90, 
                 tmax=3, tmin=1, f_max=500, f_min=0, delim_freq = 5):
     
     # Cargamos fichero del audio
@@ -178,6 +178,12 @@ def create_fingerprint(filename, display=True, test=False, n_fft=2048, hop_lengt
         plt.xlim([0, Xdb.shape[1]])
         plt.ylim([0, Xdb.shape[0]])
         plt.colorbar(format='%+2.0f dB')
+
+        direct = "data/test/specshow"
+        file = direct + "/" + name + ".png"
+        plt.savefig(file)
+
+
 
     return df, Xdb, Pi_max
 
@@ -249,7 +255,7 @@ def matching_v1(fingerAi, finger_i):
         return False, it, ta, tb
 
 
-def total_matching(fingerA, fingerBt_i, display=True):
+def total_matching(fingerA, fingerBt_i, name, display=True, min_match=5, tmax = 60, direct = "data/test/fp"):
     
     # Conjuntos de match correlacionado
     tA = []
@@ -267,20 +273,26 @@ def total_matching(fingerA, fingerBt_i, display=True):
         
         axs[0].set_title('Diagonal present')
         axs[0].plot(tA, tB, 'o')
-        axs[0].set_xlim([0, max(tA)+1])
+        axs[0].set_xlim([0, tmax])
         axs[0].set_ylim([0, max(tB)+1])      
         axs[0].set_xlabel('Database soundfile time')
         axs[0].set_ylabel('Sample soundfile time')
         axs[0].grid(True)
             
         axs[1].set_title('Signals match')
-        n = axs[1].hist(tA)
-        axs[1].set_xlim([0, max(tA)+1])
+        n = axs[1].hist(tA, numpy.arange(0, tmax, 5))
+        axs[1].set_xlim([0, tmax])
     #     axs[1].set_ylim([0, n+10])
+        axs[1].set_xlabel('Database soundfile time')
+        axs[1].set_ylabel('Sample soundfile time')
             
         if display:
             fig.tight_layout()
             plt.show()
+        else:
+            fig.tight_layout()
+            file_img = direct + "/" + name + ".png"
+            plt.savefig(file_img)
 
         element_max = numpy.where(n[0]==max(n[0]))[0][0]
         
@@ -292,7 +304,12 @@ def total_matching(fingerA, fingerBt_i, display=True):
             else:
                 tot = n[0][element_max] + n[0][element_max+1]+ n[0][element_max-1]
         
-        ratio = tot/sum(n[0])
+        # ratio = tot/sum(n[0])
+        if tot >= min_match:
+            ratio = tot
+        else:
+            ratio = 0.0
+
     else:
         ratio = 0.0
 

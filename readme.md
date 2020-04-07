@@ -4,18 +4,35 @@ Este proyecto pretende ser un ejercicio básico sobre la implementación un algo
 
 El alcance del proyecto pretende poder escuchar un fragmento de audio (10seg) y poder hacer "match" con alguno de los audios almacenados en la base de datos. 
 
-Esta Base de datos, pretende almacenar los nombres de las canciones almacenadas como "patrones" con sus hellas musicales. A estas huellas musicales las llamamos "fingerprints" y son los espectogramas de audio generados con puntos representativos del audio, es dicir, máximos locales del espectograma que guardamos en la base de datos como puntos de interes. En la siguiente imagen podemos observar un espectograma de una de las canciones de referencia:
+Esta Base de datos, pretende almacenar los nombres de las canciones almacenadas como "patrones" con sus hellas musicales. A estas huellas musicales las llamamos "fingerprints" y son los espectogramas de audio generados con puntos representativos del audio, es dicir, máximos locales del espectograma que guardamos en la base de datos como puntos de interes. 
+
+En la siguiente imagen podemos observar un espectograma de una de las canciones de referencia con un periodo de tempo de 60 segundos:
 
 ![Fingerprint Audio de referencia](/info/images/Patron.PNG)
 
-Como comentabamos
+El agoritmo se encarga de buscar relaciones de proximidad entre dos frecuencias, es decir, se almacenan parejas de frecuencias (seleccionadas como puntos caracteristicos del espectograma) junto al desfase temporal entre estas dos. La información almacenada por audio de referencia sera equivalente a un dataframe con 3 columns, donde las dos primeras seran las frecuencias a relacionar y la tercera el desfase temporal. 
+
+En la siguiente imagen se puede observar la información almacenada:
+
+![Fingerprint Audio de referencia - base datos](/info/images/fingerprint_patron.PNG)
+
+A continuacion se puede observar el espectograma del audio a analizar que ha sido obtenido por la aplicación con un periodo de tiempo de 10 segundos:
 
 ![Fingerprint Audio a clasificar](/info/images/Default.png)
 
+A partir del espectograma anterior se generará, de igual manera que antes, los datos de relación entre frecuencias caracteristicas:
 
-## How is it work
+![Fingerprint Audio de referencia - base datos](/info/images/fingerprint_eval.PNG)
 
-Me he basado en el ariticulo "An Industrial-Strength Audio Search Algorithm" publicado por Avery Li-Chun Wang. Podéis leerlo en el siguiente enlace: [here](https://www.ee.columbia.edu/~dpwe/papers/Wang03-shazam.pdf)
+
+
+
+
+
+
+## Motivaciones
+
+El proyecto esta basado en el ariticulo "An Industrial-Strength Audio Search Algorithm" publicado por Avery Li-Chun Wang. Podéis leerlo en el siguiente enlace: [here](https://www.ee.columbia.edu/~dpwe/papers/Wang03-shazam.pdf)
 
 Me he basado en el siguiente tutorial para comprender el manejo de señales de audio desde python:
 

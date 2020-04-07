@@ -25,6 +25,35 @@ A partir del espectograma anterior se generará, de igual manera que antes, los 
 ![Fingerprint Audio de referencia - base datos](/info/images/fingerprint_eval.PNG)
 
 
+A continuación, dado el fingerprint del audio a analizar, se realiza una búsqueda en la base de datos para cada uno de los audios de referencia almacenados. Con ello se identifican las parejas de frecuencias coincidentes y realizando un conteo acumulativo de todas las coincidencias encontradas. 
+
+A continuación se puede ob
+
+![Resultados no coincidentes](/info/images/fingerprint_eval.PNG)
+
+De lo contrario, a continuación se muestran las gráficas para una coincidencia, donde se puede observar claramente una diagonal de puntos a partir del segundo 27, que nos viene a decir que a partir del segundo 27 el desfase temporal entre dos coincidencias es mucho mayor. Así mismo, en el histograma de coincidencias se observa un acumulo de coincidencias en ente periodo de tiempo.
+
+![Resultados no coincidentes](/info/images/Safaera.PNG)
+
+Como curiosidad se puede observar también una diagona sobre el segundo 15 con bastante coincidencias, esto se debe a una repetición del mismo fragmento, como por ejemplo puede darse en un estribillo de una canción.
+
+
+Por último en los resultados de cara al usuario, lo que seria el "front-end", se muestra por consola los siguientes outputs en caso de match:
+```
+-------------------------------------------------------
+Resultado:
+Canción:  Safaera
+Score:  0.81
+General:  [('HeyJude', 0.0, 0), ('TheBeachBoys', 0.0, 0), ('AmericanPie', 0.0, 0), ('MyWay', 0.0, 0), ('IWantToBack', 0.0, 0), ('BlindingLights', 0.0, 0), ('ToosieSlide', 0.0, 0), ('Roses-ImanbekRemix', 0.0, 0), ('DontStartNow'anbekRemix', 0.0, 0), ('DontStartNow', 0.0, 0), ('TheBox', 0.0, 0), ('DanceMonkey', 0.0, 0), ('Safaera', 0.81, 42), ('Tusa', 0.0, 0), ('Astronomia', 0.0, 0), ('Resistire', 0.0, 0), ('UnaMalaghwayToHell', 0.19, 10)]', 0.0, 0), ('Falling', 0.0, 0), ('HighwayToHell', 0.19, 10)]
+-------------------------------------------------------
+```
+Donde nos viene a decir que la canción detectada ha sido en este caso "Safaera" con un 81% de seguridad frente al resto de audios de la base de datos.
+
+Tabien se muestra de manera más visual estos mismos resultados:
+
+![Resultados no coincidentes](/info/images/Resultado.PNG)
+
+Aqui se muestra un gráfico de barras con el porcentaje de seguridad frente al resto de canciones de manera mucho más visual e intuitiva.
 
 
 

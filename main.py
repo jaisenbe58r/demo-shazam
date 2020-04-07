@@ -173,7 +173,7 @@ if __name__ == "__main__":
         grabacion(filename, seconds=10)
         print("Generando fingerprint del audio grabado ...")
         dfB = crear_fingerprint(filename, filename_fp, args.name, test=True)
-        item, score, result = Busqueda_matching(dfB, min_match=2)
+        item, score, result = Busqueda_matching(dfB, min_match=5)
         print("-------------------------------------------------------")
         print("Resultado: ")
         if not item == "Sin Coincidencias":

@@ -58,10 +58,17 @@ Tabien se muestra de manera más visual estos mismos resultados:
 
 ![Resultados no coincidentes](/info/images/Resultado.png)
 
-Aqui se muestra un gráfico de barras con el porcentaje de seguridad frente al resto de canciones de manera mucho más visual e intuitiva.
+Aquí se muestra un gráfico de barras con el porcentaje de seguridad frente al resto de canciones de manera mucho más visual e intuitiva para el usuario final.
 
+Haciendo un guiño al periodo de crisis por el **Coronavirus**, vamos a intentar detectar la canción "Resistiré" del Dúo Dinámico [here](https://www.youtube.com/watch?v=K1rKj6XMt4Q)
 
+Como resultado obtenemos:
 
+![Resultado Resistiré](/info/images/Resultado/Resistire.png)
+
+Y para el usuario final:
+
+![Resultado Resistiré](/info/images/ResultadoResistire.png)
 
 
 ## Motivaciones
@@ -90,6 +97,7 @@ git clone https://github.com/jaisenbe58r/demo-shazam.git
 
 En El archivo requirements.txt se puede encontrar todas las dependencias:
 
+* python 3.7
 * numpy
 * pandas
 * librosa
@@ -106,7 +114,6 @@ Se puede instalar el paquete completo de dependencias de la siguiente manera:
 ```
 pip install -r requirements.txt
 ```
-
 
 
 ## Ejecutando la App ⚙️

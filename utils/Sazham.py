@@ -262,37 +262,39 @@ def total_matching(fingerA, fingerBt_i, display=True):
             tA.append(ta)
             tB.append(tb)
       
-    
-    fig, axs = plt.subplots(2, 1, figsize=(8,6))
-    
-    axs[0].set_title('Diagonal present')
-    axs[0].plot(tA, tB, 'o')
-    axs[0].set_xlim([0, max(tA)+1])
-    axs[0].set_ylim([0, max(tB)+1])      
-    axs[0].set_xlabel('Database soundfile time')
-    axs[0].set_ylabel('Sample soundfile time')
-    axs[0].grid(True)
-           
-    axs[1].set_title('Signals match')
-    n = axs[1].hist(tA)
-    axs[1].set_xlim([0, max(tA)+1])
-#     axs[1].set_ylim([0, n+10])
+    if len(tA)>0:
+        fig, axs = plt.subplots(2, 1, figsize=(8,6))
         
-    if display:
-        fig.tight_layout()
-        plt.show()
+        axs[0].set_title('Diagonal present')
+        axs[0].plot(tA, tB, 'o')
+        axs[0].set_xlim([0, max(tA)+1])
+        axs[0].set_ylim([0, max(tB)+1])      
+        axs[0].set_xlabel('Database soundfile time')
+        axs[0].set_ylabel('Sample soundfile time')
+        axs[0].grid(True)
+            
+        axs[1].set_title('Signals match')
+        n = axs[1].hist(tA)
+        axs[1].set_xlim([0, max(tA)+1])
+    #     axs[1].set_ylim([0, n+10])
+            
+        if display:
+            fig.tight_layout()
+            plt.show()
 
-    element_max = numpy.where(n[0]==max(n[0]))[0][0]
-    
-    if element_max==n[0].shape[0]:
-        tot = element_max
-    else:
-        if element_max==0:
-            tot = n[0][element_max] + n[0][element_max+1]
+        element_max = numpy.where(n[0]==max(n[0]))[0][0]
+        
+        if element_max==n[0].shape[0]-1:
+            tot = element_max
         else:
-            tot = n[0][element_max] + n[0][element_max+1]+ n[0][element_max-1]
-    
-    ratio = tot/sum(n[0])
+            if element_max==0:
+                tot = n[0][element_max] + n[0][element_max+1]
+            else:
+                tot = n[0][element_max] + n[0][element_max+1]+ n[0][element_max-1]
+        
+        ratio = tot/sum(n[0])
+    else:
+        ratio = 0.0
 
     return ratio, tA, tB
             

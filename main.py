@@ -58,6 +58,7 @@ def Busqueda_matching(dfC):
 
     for elemento in lista:
 
+
         archivo = test_fp_filename+ "/" + elemento + ".csv"
         df = pd.read_csv(archivo)
 
@@ -65,7 +66,7 @@ def Busqueda_matching(dfC):
 
         resultados.append(ratio)
 
-    id_Result_final = numpy.where(resultados == max(resultados))
+    id_Result_final = numpy.where(resultados == max(resultados))[0][0]
 
     return lista[id_Result_final], resultados[id_Result_final]
 
@@ -124,9 +125,11 @@ if __name__ == "__main__":
         dfB = crear_fingerprint(filename, filename_fp, args.name, test=True)
         item, score = Busqueda_matching(dfB)
         print("-------------------------------------------------------")
-        print("Resultado: \n")
-        print("Cancion: ", item, "\n")
-        print("Score: ", item, "\n")
+        print("Resultado: ")
+        print("Cancion: ", item)
+        print("Score: ", score)
+        print("-------------------------------------------------------")
+        print("\n")
 
     elif args.modo == "prueba":
         pass

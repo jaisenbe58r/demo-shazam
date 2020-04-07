@@ -9,7 +9,6 @@ def registro():
     a = []
     with open(dirFichero, 'r') as reader:
         for line in reader:
-            print(line)
             _line = line.split('\n')[0]
             a.append(_line)
 

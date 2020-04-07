@@ -33,7 +33,7 @@ A continuación se puede ob
 
 De lo contrario, a continuación se muestran las gráficas para una coincidencia, donde se puede observar claramente una diagonal de puntos a partir del segundo 27, que nos viene a decir que a partir del segundo 27 el desfase temporal entre dos coincidencias es mucho mayor. Así mismo, en el histograma de coincidencias se observa un acumulo de coincidencias en ente periodo de tiempo.
 
-![Resultados no coincidentes](/info/images/Safaera.PNG)
+![Resultados no coincidentes](/info/images/Safaera.png)
 
 Como curiosidad se puede observar también una diagona sobre el segundo 15 con bastante coincidencias, esto se debe a una repetición del mismo fragmento, como por ejemplo puede darse en un estribillo de una canción.
 
@@ -44,14 +44,19 @@ Por último en los resultados de cara al usuario, lo que seria el "front-end", s
 Resultado:
 Canción:  Safaera
 Score:  0.81
-General:  [('HeyJude', 0.0, 0), ('TheBeachBoys', 0.0, 0), ('AmericanPie', 0.0, 0), ('MyWay', 0.0, 0), ('IWantToBack', 0.0, 0), ('BlindingLights', 0.0, 0), ('ToosieSlide', 0.0, 0), ('Roses-ImanbekRemix', 0.0, 0), ('DontStartNow'anbekRemix', 0.0, 0), ('DontStartNow', 0.0, 0), ('TheBox', 0.0, 0), ('DanceMonkey', 0.0, 0), ('Safaera', 0.81, 42), ('Tusa', 0.0, 0), ('Astronomia', 0.0, 0), ('Resistire', 0.0, 0), ('UnaMalaghwayToHell', 0.19, 10)]', 0.0, 0), ('Falling', 0.0, 0), ('HighwayToHell', 0.19, 10)]
+General:  [('HeyJude', 0.0, 0), ('TheBeachBoys', 0.0, 0), ('AmericanPie', 0.0, 0), 
+('MyWay', 0.0, 0), ('IWantToBack', 0.0, 0), ('BlindingLights', 0.0, 0), 
+('ToosieSlide', 0.0, 0), ('Roses-ImanbekRemix', 0.0, 0), ('DontStartNow'anbekRemix', 0.0, 0), 
+('DontStartNow', 0.0, 0), ('TheBox', 0.0, 0), ('DanceMonkey', 0.0, 0), ('Safaera', 0.81, 42), 
+('Tusa', 0.0, 0), ('Astronomia', 0.0, 0), ('Resistire', 0.0, 0), ('UnaMalaghwayToHell', 0.19, 10),
+('Falling', 0.0, 0), ('HighwayToHell', 0.19, 10)]
 -------------------------------------------------------
 ```
 Donde nos viene a decir que la canción detectada ha sido en este caso "Safaera" con un 81% de seguridad frente al resto de audios de la base de datos.
 
 Tabien se muestra de manera más visual estos mismos resultados:
 
-![Resultados no coincidentes](/info/images/Resultado.PNG)
+![Resultados no coincidentes](/info/images/Resultado.png)
 
 Aqui se muestra un gráfico de barras con el porcentaje de seguridad frente al resto de canciones de manera mucho más visual e intuitiva.
 
@@ -112,27 +117,14 @@ La App está provista de varios mods de funcionamiento:
 * "Record": Prueba de grabación de audio.
 * "Fingerprint": Creación de patrones de referencia para nuevos audios.
 * "Evaluation": Analizar audio en tiempo real y dar los resultados de matching.
+* "Base de Datos": Listar canciones de referencia almacenadas.
 
 ```
 python main.py -h
 
 **Output:** 
 
-usage: ['main.py', '--modo', 'help'] [-h]
-                                     [--modo {play,record,fingerprint,eval,help}]
-                                     [--name NAME] [--direct DIRECT]
-                                     [--time TIME] [--display {Y,N}]
 
-Parseador de argumentos
-
-optional arguments:
-  -h, --help            show this help message and exit
-  --modo {play,record,fingerprint,eval,help}
-                        Selección de modo de funcionamiento del programa
-  --name NAME           Nombre del archivo
-  --direct DIRECT       Ruta del archivo
-  --time TIME           Tiempo de grabacion
-  --display {Y,N}       Visualizacion de Resultados
   ```
 
 ### Play
@@ -173,6 +165,39 @@ Se procede a grabar 10segundos de audio y a continuación se generan los resulta
 ```
 python main.py --modo eval --display N
 ```
+
+### Lista
+
+Este modo prende listar todas las canciones almacenadas en la base de datos.
+
+```
+python main.py --modo lista
+
+**Output:**
+
+******************************************************
+***************** BASE DE DATOS **********************
+******************************************************
+1    HeyJude
+2    TheBeachBoys
+3    AmericanPie
+4    MyWay
+5    IWantToBack
+6    BlindingLights
+7    ToosieSlide
+8    Roses-ImanbekRemix
+9    DontStartNow
+10   TheBox
+11   DanceMonkey
+12   Safaera
+13   Tusa
+14   Astronomia
+15   Resistire
+16   UnaMala
+17   Falling
+18   HighwayToHell
+```
+
 
 
 

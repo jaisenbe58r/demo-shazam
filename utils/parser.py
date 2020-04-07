@@ -11,7 +11,7 @@ def arguments():
 
     argparser.add_argument(
         "--modo",
-        choices=['play','record', 'fingerprint', 'eval', 'help'],
+        choices=['play','record', 'fingerprint', 'eval', 'lista', 'help'],
         type=str,
         default="eval",
         help="Selección de modo de funcionamiento del programa",

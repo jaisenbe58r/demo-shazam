@@ -190,7 +190,22 @@ if __name__ == "__main__":
             print("ERROR: No se han encontrado coincidencias")
             print("-------------------------------------------------------")
             print("\n")
-        
 
+    elif args.modo == 'lista':
+
+        print("******************************************************")
+        print("***************** BASE DE DATOS **********************")
+        print("******************************************************")
+        lista = registro()
+        for i in range(len(lista)):
+            aux = len(str(i+1))
+            if aux < 2:
+                print(i+1, "  ", lista[i])
+            elif aux < 3:
+                print(i+1, " ", lista[i])
+            else:
+                print(i+1, "", lista[i])
+
+        
     elif args.modo == "help":
         argparser.print_help()

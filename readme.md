@@ -70,7 +70,7 @@ La App está provista de varios mods de funcionamiento:
 ```
 python main.py -h
 
-Output: 
+**Output:** 
 
 usage: ['main.py', '--modo', 'help'] [-h]
                                      [--modo {play,record,fingerprint,eval,help}]
@@ -87,9 +87,9 @@ optional arguments:
   --direct DIRECT       Ruta del archivo
   --time TIME           Tiempo de grabacion
   --display {Y,N}       Visualizacion de Resultados
-  '''
+  ```
 
-### Play.
+### Play
 
 Escuchar audios guardados en local, en este caso se reproducira el archivo "data/test/Default.wav" con el siguiente comando:
 

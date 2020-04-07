@@ -77,20 +77,18 @@ Y para el usuario final:
 
 ## Motivaciones
 
-El proyecto esta basado en el ariticulo "An Industrial-Strength Audio Search Algorithm" publicado por Avery Li-Chun Wang. Podéis leerlo en el siguiente enlace: [here](https://www.ee.columbia.edu/~dpwe/papers/Wang03-shazam.pdf)
+El proyecto esta basado en el ariticulo ["An Industrial-Strength Audio Search Algorithm"](https://www.ee.columbia.edu/~dpwe/papers/Wang03-shazam.pdf) publicado por Avery Li-Chun Wang.
 
-Me he basado en el siguiente tutorial para comprender el manejo de señales de audio desde python:
-
-[here](https://musicinformationretrieval.com/index.html)
+También cabe destacar que me he basado en el siguiente [tutorial](https://musicinformationretrieval.com/index.html) para comprender el manejo de señales de audio desde python y que me han ayudado en gran medida con el desarrollo de gran parte de los módulos del proyecto.
 
 
 ## Comenzando 🚀
 
-_Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas._
+Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas.
 
-### Colnar el repositorio
+### Clonar el repositorio
 
-Clonar el repositorio en una carpeta local a tu workstation:
+Clonar el repositorio en una carpeta local de tu PC:
 
 ```
 git clone https://github.com/jaisenbe58r/demo-shazam.git
@@ -122,7 +120,7 @@ pip install -r requirements.txt
 
 ## Ejecutando la App ⚙️
 
-La App está provista de varios mods de funcionamiento:
+La App está provista de varios modos de funcionamiento:
 
 * "Play": Escuchar audios guardados en local.
 * "Record": Prueba de grabación de audio.
@@ -133,9 +131,23 @@ La App está provista de varios mods de funcionamiento:
 ```
 python main.py -h
 
-**Output:** 
+_ Output: 
 
+usage: ['main.py', '--modo', 'help'] [-h]
+                                     [--modo {play,record,fingerprint,eval,lista,help}]
+                                     [--name NAME] [--direct DIRECT]
+                                     [--time TIME] [--display {Y,N}]
 
+Parseador de argumentos
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --modo {play,record,fingerprint,eval,lista,help}
+                        Selección de modo de funcionamiento del programa
+  --name NAME           Nombre del archivo
+  --direct DIRECT       Ruta del archivo
+  --time TIME           Tiempo de grabacion
+  --display {Y,N}       Visualizacion de Resultados
   ```
 
 ### Play
@@ -163,7 +175,7 @@ Añadir patrones a la Base de Datos. Se selecciona el nombre de la canción con 
 python main.py --modo fingerprint --name HighwayToHell --time 60
 ```
 
-Se creara un archivo name.csv en la carpeta "data/patrones/fingerprints" y se añadira el nombre a la Base de datos (archivo BASE_DATOS.txt)
+Se creara un archivo name.csv en la carpeta "data/patrones/fingerprints" y se añadira el nombre a la Base de datos [BASE_DATOS.txt ](BASE_DATOS.txt)
 
 
 ### Evaluación
@@ -184,7 +196,7 @@ Este modo prende listar todas las canciones almacenadas en la base de datos.
 ```
 python main.py --modo lista
 
-**Output:**
+_ _Output:
 
 ******************************************************
 ***************** BASE DE DATOS **********************
@@ -214,8 +226,8 @@ python main.py --modo lista
 
 ## Contribuyendo 🖇️
 
-* Si desea contribuir al código, crea un pull request
-* Si encuentra algún error, crea un issue
+* Si desea contribuir al código, crea un pull request.
+* Si encuentra algún error, crea un issue.
 
 
 ## Wiki 📖

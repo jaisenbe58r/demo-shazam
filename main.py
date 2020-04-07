@@ -120,7 +120,7 @@ def resultados(result, display = True, direct = "output"):
 
 if __name__ == "__main__":
     
-    args = arguments()
+    args, argparser = arguments()
     data_filename = os.path.join("data","patrones","files")
     fingerprint_filename = os.path.join("data","patrones","fingerprints")
     test_filename = os.path.join("data","test")
@@ -146,9 +146,9 @@ if __name__ == "__main__":
         print("******************************************************")
         print("****************** Record music **********************")
         print("******************************************************")
-        filename = data_filename + "/" + args.name + ".wav"
+        filename = "output/records" + "/" + args.name + ".wav"
         print("Grabando: ", args.name, " ...")
-        grabacion(filename, seconds=60)
+        grabacion(filename, seconds=args.time)
 
     elif args.modo == 'fingerprint':
 
@@ -158,7 +158,7 @@ if __name__ == "__main__":
         filename = os.path.join(data_filename, args.name + ".wav")
         filename_fp = fingerprint_filename + "/" + args.name + ".csv"
         print("Grabando para FINGERPRINT: ", args.name, " ...")
-        grabacion(filename, seconds=60)
+        grabacion(filename, seconds=args.time)
         print("Grabacion finalizada, Se procede a crear la huella...")
         crear_fingerprint(filename, filename_fp, args.name)
 
@@ -182,13 +182,15 @@ if __name__ == "__main__":
             print("General: ", result)
             print("-------------------------------------------------------")
             print("\n")
-            resultados(result, display = False)
+            if args.display=="Y":
+                resultados(result, display = True)
+            else:
+                resultados(result, display = False)
         else:
             print("ERROR: No se han encontrado coincidencias")
             print("-------------------------------------------------------")
             print("\n")
         
-            
 
-    elif args.modo == "prueba":
-        pass
+    elif args.modo == "help":
+        argparser.print_help()

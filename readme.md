@@ -26,7 +26,13 @@ Me he basado en el siguiente tutorial para comprender el manejo de señales de a
 
 _Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas._
 
-Mira **Deployment** para conocer como desplegar el proyecto.
+### Colnar el repositorio
+
+Clonar el repositorio en una carpeta local a tu workstation:
+
+```
+git clone https://github.com/jaisenbe58r/demo-shazam.git
+```
 
 
 ### Pre-requisitos 📋
@@ -50,43 +56,78 @@ Se puede instalar el paquete completo de dependencias de la siguiente manera:
 pip install -r requirements.txt
 ```
 
-### Instalación 🔧
 
-_Una serie de ejemplos paso a paso que te dice lo que debes ejecutar para tener un entorno de desarrollo ejecutandose_
 
-_Dí cómo será ese paso_
+## Ejecutando la App ⚙️
 
-```
-Da un ejemplo
-```
+La App está provista de varios mods de funcionamiento:
 
-_Y repite_
-
-```
-hasta finalizar
-```
-
-_Finaliza con un ejemplo de cómo obtener datos del sistema o como usarlos para una pequeña demo_
-
-## Ejecutando las pruebas ⚙️
-
-_Explica como ejecutar las pruebas automatizadas para este sistema_
-
-### Analice las pruebas end-to-end 🔩
-
-_Explica que verifican estas pruebas y por qué_
+* "Play": Escuchar audios guardados en local.
+* "Record": Prueba de grabación de audio.
+* "Fingerprint": Creación de patrones de referencia para nuevos audios.
+* "Evaluation": Analizar audio en tiempo real y dar los resultados de matching.
 
 ```
-Da un ejemplo
+python main.py -h
+
+Output: 
+
+usage: ['main.py', '--modo', 'help'] [-h]
+                                     [--modo {play,record,fingerprint,eval,help}]
+                                     [--name NAME] [--direct DIRECT]
+                                     [--time TIME] [--display {Y,N}]
+
+Parseador de argumentos
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --modo {play,record,fingerprint,eval,help}
+                        Selección de modo de funcionamiento del programa
+  --name NAME           Nombre del archivo
+  --direct DIRECT       Ruta del archivo
+  --time TIME           Tiempo de grabacion
+  --display {Y,N}       Visualizacion de Resultados
+  '''
+
+### Play.
+
+Escuchar audios guardados en local, en este caso se reproducira el archivo "data/test/Default.wav" con el siguiente comando:
+
+```
+python main.py --modo play --direct data/test/Default.wav
 ```
 
-### Y las pruebas de estilo de codificación ⌨️
+### Record
 
-_Explica que verifican estas pruebas y por qué_
+Prueba de grabación de audio. El audio se guardará en la carpeta "output/records". Se le puede asignar un nombre con el parseador "--name" y también se puede asignar el tiempo de grabación "--time" (por defecto es de 60seg).
 
 ```
-Da un ejemplo
+python main.py --modo record --name Prueba --time 10
 ```
+
+
+### Fingerprint
+
+Añadir patrones a la Base de Datos. Se selecciona el nombre de la canción con el parseador "--name" y se selecciona el tiempo de grabación "--time" (por defecto en 60seg).
+
+```
+python main.py --modo fingerprint --name HighwayToHell --time 60
+```
+
+Se creara un archivo name.csv en la carpeta "data/patrones/fingerprints" y se añadira el nombre a la Base de datos (archivo BASE_DATOS.txt)
+
+
+### Evaluación
+
+Se procede a grabar 10segundos de audio y a continuación se generan los resultados. Los resultados apareceran directamente en la consola pero también se puede seleccionar el modo de visualización mediante el parseador "--display". Hay dos maneras de visualizar los resultados:
+
+* Guardado de los histogramas de los resultados en un archivo ".png" en la carpeta "/output".
+* Visualización en pantalla.
+
+```
+python main.py --modo eval --display N
+```
+
 
 
 ## Contribuyendo 🖇️
@@ -97,21 +138,21 @@ Da un ejemplo
 
 ## Wiki 📖
 
-Puedes encontrar mucho más de cómo utilizar este proyecto en nuestra [Wiki](https://github.com/tu/proyecto/wiki)
+Puedes encontrar mucho más de cómo utilizar este proyecto en nuestra [Wiki](https://github.com/jaisenbe58r/demo-shazam/wiki)
 
 ## Versionado 📌
 
-Usamos [SemVer](http://semver.org/) para el versionado. Para todas las versiones disponibles, mira los [tags en este repositorio](https://github.com/tu/proyecto/tags).
+Se usa [SemVer](http://semver.org/) para el versionado. Para todas las versiones disponibles, mira los [tags en este repositorio](https://github.com/jaisenbe58r/demo-shazam/tags).
 
 ## Autores ✒️
 
-* **Jaime Sendra Berenguer** - *Data Scientist* - [jaisenbe58r](https://github.com/jaisenbe58r) - [linkedin](www.linkedin.com/in/jaisenbe)
+* **Jaime Sendra Berenguer** - *Data Scientist* - [GitHub](https://github.com/jaisenbe58r) - [linkedin](https://www.linkedin.com/in/jaisenbe/)
 
 También puedes mirar la lista de todos los [contribuyentes](https://github.com/jaisenbe58r/demo-shazam/graphs/contributors) quíenes han participado en este proyecto. 
 
 
 ## Licencia 📄
 
-Este proyecto está bajo la Licencia MIT Lıcense - mira el archivo [LICENSE.md](LICENSE.md) para detalles
+Este proyecto está bajo la Licencia MIT Lıcense - mira el archivo [LICENSE](LICENSE.md) para detalles
 
 

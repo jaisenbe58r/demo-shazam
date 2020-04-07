@@ -1,4 +1,4 @@
-# Título del Proyecto
+# Demo-Shazam-App
 
 Este proyecto pretende ser un ejercicio básico sobre la implementación un algoritmo basado en la app shazam.
 

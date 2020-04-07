@@ -6,11 +6,11 @@ El alcance del proyecto pretende poder escuchar un fragmento de audio (10seg) y 
 
 Esta Base de datos, pretende almacenar los nombres de las canciones almacenadas como "patrones" con sus hellas musicales. A estas huellas musicales las llamamos "fingerprints" y son los espectogramas de audio generados con puntos representativos del audio, es dicir, máximos locales del espectograma que guardamos en la base de datos como puntos de interes. En la siguiente imagen podemos observar un espectograma de una de las canciones de referencia:
 
-![Fingerprint Audio de referencia](/info/images/patron.PNG)
+![Fingerprint Audio de referencia](/info/images/Patron.PNG)
 
 Como comentabamos
 
-![Fingerprint Audio a clasificar](/info/images/Default.PNG)
+![Fingerprint Audio a clasificar](/info/images/Default.png)
 
 
 ## Comenzando 🚀

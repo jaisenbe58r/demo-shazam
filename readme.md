@@ -10,17 +10,17 @@ En la siguiente imagen podemos observar un espectograma de una de las canciones 
 
 ![Fingerprint Audio de referencia](/info/images/Patron.PNG)
 
-En enta imagen se puede observar el espectograma del audio limpio, sin los máximos locales superpuestos sobre el espectograma:
+En esta imagen se puede observar el espectograma del audio limpio, sin los máximos locales superpuestos sobre el espectograma:
 
 ![Fingerprint Audio de referencia](/info/images/espectograma.PNG)
 
-El algoritmo se encarga de buscar relaciones de proximidad entre dos frecuencias, es decir, se almacenan parejas de frecuencias (seleccionadas como puntos caracteristicos del espectograma) junto al desfase temporal entre estas dos. La información almacenada por audio de referencia sera equivalente a un dataframe con 3 columns, donde las dos primeras seran las frecuencias a relacionar y la tercera el desfase temporal. 
+El algoritmo se encarga de buscar relaciones de proximidad entre dos frecuencias, es decir, se almacenan parejas de frecuencias (seleccionadas como puntos característicos del espectograma) junto al desfase temporal entre estas dos. La información almacenada por audio de referencia será equivalente a un dataframe con 3 columnas, donde las dos primeras serán las frecuencias a relacionar y la tercera el desfase temporal. 
 
 En la siguiente imagen se puede observar la información almacenada:
 
 ![Fingerprint Audio de referencia - base datos](/info/images/fingerprint_patron.PNG)
 
-A continuacion se puede observar el espectograma del audio a analizar que ha sido obtenido por la aplicación con un periodo de tiempo de 10 segundos:
+A continuacion se puede observar el espectograma del audio de evaluación que ha sido obtenido por la aplicación con un periodo de tiempo de 10 segundos:
 
 ![Fingerprint Audio a clasificar](/info/images/Default.png)
 
@@ -29,20 +29,20 @@ A partir del espectograma anterior se generará, de igual manera que antes, los 
 ![Fingerprint Audio de referencia - base datos](/info/images/fingerprint_eval.PNG)
 
 
-A continuación, dado el fingerprint del audio a analizar, se realiza una búsqueda en la base de datos para cada uno de los audios de referencia almacenados. Con ello se identifican las parejas de frecuencias coincidentes y realizando un conteo acumulativo de todas las coincidencias encontradas. 
+Dado el fingerprint del audio a analizar, se realiza una búsqueda en la base de datos para cada uno de los audios de referencia almacenados. Con ello se identifican las parejas de frecuencias coincidentes y se realiza un conteo acumulativo de todas las coincidencias encontradas. 
 
-Seguidamente se muestran las gráficas para una coincidencia, donde se puede observar claramente una diagonal de puntos a partir del segundo 27, que nos viene a decir que a partir del segundo 27 el desfase temporal entre dos coincidencias es mucho mayor. Así mismo, en el histograma de coincidencias se observa un acumulo de coincidencias en ente periodo de tiempo.
+A continuación se muestran las gráficas para una coincidencia, donde se puede observar claramente una diagonal de puntos a partir del segundo 27, que nos viene a decir que a partir de ese instante de tiempo el desfase temporal entre dos coincidencias es mucho menor. Así mismo, en el histograma de coincidencias se observa un acumulo de coincidencias en este periodo de tiempo.
 
 ![Resultados no coincidentes](/info/images/Safaera.png)
 
-De lo contrario, se puede observar una grafica de **no**-coincidencia, donde se puede ver claramente que la nube de puntos (coincidencias) está más dispersa no siguiendo un patron de coincidencia lineal respecto al tiempo. Se puede observar un pico de acumulación de coincidencias sobre el segundo 45, al estar los puntos apilados respecto la coordenada "y" se podria decir que en este instante de tiempo ha habido varias coincidencias en varias frecuencias (acordes significativos coincidentes, mismas caracteristicas en un compas, mismo estilo musical, utilización del mismo efecto de sonido, etc...). Esto podria mejorarse en el agoritmo descartando match que esten sobre la misma coordenada "y", es decir, que se produzcan en el mismo instante de tiempo.
+De lo contrario, sobre una gráfica de **no**-coincidencia, se puede ver claramente que la nube de puntos (coincidencias) está más dispersa, no siguiendo un patrón de coincidencia lineal respecto al tiempo como la gráfica anterior. Se puede observar un pico de acumulación de coincidencias sobre el segundo 45, al estar los puntos apilados respecto la coordenada "y" se podria decir que en este instante de tiempo ha habido varias coincidencias en varias frecuencias (acordes significativos coincidentes, mismas caracteristicas en un compás, mismo estilo musical, utilización del mismo efecto de sonido, etc...). Esto podría mejorarse en el algoritmo descartando los match que esten sobre la misma coordenada "y", es decir, que se produzcan en el mismo instante de tiempo.
 
-![Resultados no coincidentes](/info/images/Falling.PNG)
+![Resultados no coincidentes](/info/images/Falling.png)
 
-Como curiosidad se puede observar también una diagona sobre el segundo 15 con bastante coincidencias, esto se debe a una repetición del mismo fragmento, como por ejemplo puede darse en un estribillo de una canción.
+Como curiosidad se puede observar también una diagonal sobre el segundo 15 con bastante coincidencias, esto se debe a una repetición del mismo fragmento, como por ejemplo, puede darse en un estribillo de una canción.
 
 
-Por último en los resultados de cara al usuario, lo que seria el "front-end", se muestra por consola los siguientes outputs en caso de match:
+Por último en los resultados de cara al usuario, lo que sería el "front-end", se muestra por consola los siguientes outputs en caso de match:
 ```
 -------------------------------------------------------
 Resultado:
@@ -50,7 +50,7 @@ Canción:  Safaera
 Score:  0.81
 General:  [('HeyJude', 0.0, 0), ('TheBeachBoys', 0.0, 0), ('AmericanPie', 0.0, 0), 
 ('MyWay', 0.0, 0), ('IWantToBack', 0.0, 0), ('BlindingLights', 0.0, 0), 
-('ToosieSlide', 0.0, 0), ('Roses-ImanbekRemix', 0.0, 0), ('DontStartNow'anbekRemix', 0.0, 0), 
+('ToosieSlide', 0.0, 0), ('Roses-ImanbekRemix', 0.0, 0), ('DontStartNow', 0.0, 0), 
 ('DontStartNow', 0.0, 0), ('TheBox', 0.0, 0), ('DanceMonkey', 0.0, 0), ('Safaera', 0.81, 42), 
 ('Tusa', 0.0, 0), ('Astronomia', 0.0, 0), ('Resistire', 0.0, 0), ('UnaMalaghwayToHell', 0.19, 10),
 ('Falling', 0.0, 0), ('HighwayToHell', 0.19, 10)]
@@ -58,13 +58,13 @@ General:  [('HeyJude', 0.0, 0), ('TheBeachBoys', 0.0, 0), ('AmericanPie', 0.0, 0
 ```
 Donde nos viene a decir que la canción detectada ha sido en este caso "Safaera" con un 81% de seguridad frente al resto de audios de la base de datos.
 
-Tabien se muestra de manera más visual estos mismos resultados:
+Tabién se muestra de manera más visual estos mismos resultados:
 
 ![Resultados no coincidentes](/info/images/Resultado.png)
 
 Aquí se muestra un gráfico de barras con el porcentaje de seguridad frente al resto de canciones de manera mucho más visual e intuitiva para el usuario final.
 
-Haciendo un guiño al periodo de crisis por el **Coronavirus**, vamos a intentar detectar la canción "Resistiré" del Dúo Dinámico [here](https://www.youtube.com/watch?v=K1rKj6XMt4Q)
+Haciendo un guiño al periodo de crisis por el **Coronavirus** que estamos sufriendo, vamos a intentar detectar la canción ["Resistiré"](https://www.youtube.com/watch?v=K1rKj6XMt4Q) del Dúo Dinámico...
 
 Como resultado obtenemos:
 

@@ -8,3 +8,4 @@ scipy
 playsound
 sounddevice
 # PyAudio
+wave

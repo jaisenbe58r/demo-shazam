@@ -64,7 +64,7 @@ Haciendo un guiño al periodo de crisis por el **Coronavirus**, vamos a intentar
 
 Como resultado obtenemos:
 
-![Resultado Resistiré](/info/images/Resultado/Resistire.png)
+![Resultado Resistiré](/info/images/Resistire.png)
 
 Y para el usuario final:
 

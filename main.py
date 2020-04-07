@@ -54,6 +54,21 @@ def crear_fingerprint(filename, filename_fp, name, test=False):
     return dfC
 
 
+def eliminar_duplicados():
+
+    lista = registro()
+    test_fp_filename = os.path.join("data","patrones","fingerprints")
+
+    for elemento in lista:
+
+        archivo = test_fp_filename+ "/" + elemento + ".csv"
+        df = pd.read_csv(archivo, index_col=0)
+        print(df.shape)
+        ddf = df.drop_duplicates()
+        print(ddf.shape)
+        ddf.to_csv(archivo)        
+
+
 def Busqueda_matching(dfC, min_match = 5):
 
     lista = registro()
@@ -68,6 +83,7 @@ def Busqueda_matching(dfC, min_match = 5):
         ratio, _, _ = total_matching(df, dfC, elemento, display=False, min_match = min_match)
 
         resultados.append(ratio)  
+
     
     if len(resultados)>0 and sum(resultados)>0.0:
         na_result = numpy.array(resultados)

@@ -27,13 +27,13 @@ A partir del espectograma anterior se generará, de igual manera que antes, los 
 
 A continuación, dado el fingerprint del audio a analizar, se realiza una búsqueda en la base de datos para cada uno de los audios de referencia almacenados. Con ello se identifican las parejas de frecuencias coincidentes y realizando un conteo acumulativo de todas las coincidencias encontradas. 
 
-A continuación se puede ob
-
-![Resultados no coincidentes](/info/images/fingerprint_eval.PNG)
-
-De lo contrario, a continuación se muestran las gráficas para una coincidencia, donde se puede observar claramente una diagonal de puntos a partir del segundo 27, que nos viene a decir que a partir del segundo 27 el desfase temporal entre dos coincidencias es mucho mayor. Así mismo, en el histograma de coincidencias se observa un acumulo de coincidencias en ente periodo de tiempo.
+Seguidamente se muestran las gráficas para una coincidencia, donde se puede observar claramente una diagonal de puntos a partir del segundo 27, que nos viene a decir que a partir del segundo 27 el desfase temporal entre dos coincidencias es mucho mayor. Así mismo, en el histograma de coincidencias se observa un acumulo de coincidencias en ente periodo de tiempo.
 
 ![Resultados no coincidentes](/info/images/Safaera.png)
+
+De lo contrario, se puede observar una grafica de **no**-coincidencia, donde se puede ver claramente que la nube de puntos (coincidencias) está más dispersa no siguiendo un patron de coincidencia lineal respecto al tiempo. Se puede observar un pico de acumulación de coincidencias sobre el segundo 45, al estar los puntos apilados respecto la coordenada "y" se podria decir que en este instante de tiempo ha habido varias coincidencias en varias frecuencias (acordes significativos coincidentes, mismas caracteristicas en un compas, mismo estilo musical, utilización del mismo efecto de sonido, etc...). Esto podria mejorarse en el agoritmo descartando match que esten sobre la misma coordenada "y", es decir, que se produzcan en el mismo instante de tiempo.
+
+![Resultados no coincidentes](/info/images/Falling.PNG)
 
 Como curiosidad se puede observar también una diagona sobre el segundo 15 con bastante coincidencias, esto se debe a una repetición del mismo fragmento, como por ejemplo puede darse en un estribillo de una canción.
 

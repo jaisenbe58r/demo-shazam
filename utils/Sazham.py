@@ -133,8 +133,9 @@ def create_data(Xdb, max_locales, cc, ut):
         
     d = {'f0': Y0, 'f1': Y1, 't0': X0, 't1': X1, 'dB0': f0, 'dB1': f1, 'dist': dist, 'utime': time, 'ufreq': freq}
     df = pd.DataFrame(data=d)
+    ddf = df.drop_duplicates()
     
-    return df
+    return ddf
 
 
 def create_fingerprint(filename, name="Default", display=True, test=False, n_fft=2048, hop_length=512, percentil=90, 

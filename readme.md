@@ -2,15 +2,19 @@
 
 Este proyecto pretende ser un ejercicio básico sobre la implementación un algoritmo basado en la app shazam.
 
-El alcance del proyecto pretende poder escuchar un fragmento de audio (10seg) y poder hacer "match" con alguno de los audios almacenados en la base de datos. 
+El alcance del proyecto pretende poder escuchar un fragmento de audio (10seg) y poder hacer determinar una coincidencia con alguno de los audios almacenados en la base de datos. 
 
-Esta Base de datos, pretende almacenar los nombres de las canciones almacenadas como "patrones" con sus hellas musicales. A estas huellas musicales las llamamos "fingerprints" y son los espectogramas de audio generados con puntos representativos del audio, es dicir, máximos locales del espectograma que guardamos en la base de datos como puntos de interes. 
+La finalidad de esta Base de Datos es la de almacenar los nombres de las canciones definidas como "patrones" con sus hellas musicales. A estas huellas musicales las llamamos "fingerprints" y son los espectogramas de audio generados con puntos representativos del audio, es dicir, máximos locales del espectograma que guardamos en la base de datos como puntos de interes. 
 
 En la siguiente imagen podemos observar un espectograma de una de las canciones de referencia con un periodo de tempo de 60 segundos:
 
 ![Fingerprint Audio de referencia](/info/images/Patron.PNG)
 
-El agoritmo se encarga de buscar relaciones de proximidad entre dos frecuencias, es decir, se almacenan parejas de frecuencias (seleccionadas como puntos caracteristicos del espectograma) junto al desfase temporal entre estas dos. La información almacenada por audio de referencia sera equivalente a un dataframe con 3 columns, donde las dos primeras seran las frecuencias a relacionar y la tercera el desfase temporal. 
+En enta imagen se puede observar el espectograma del audio limpio, sin los máximos locales superpuestos sobre el espectograma:
+
+![Fingerprint Audio de referencia](/info/images/espectograma.PNG)
+
+El algoritmo se encarga de buscar relaciones de proximidad entre dos frecuencias, es decir, se almacenan parejas de frecuencias (seleccionadas como puntos caracteristicos del espectograma) junto al desfase temporal entre estas dos. La información almacenada por audio de referencia sera equivalente a un dataframe con 3 columns, donde las dos primeras seran las frecuencias a relacionar y la tercera el desfase temporal. 
 
 En la siguiente imagen se puede observar la información almacenada:
 

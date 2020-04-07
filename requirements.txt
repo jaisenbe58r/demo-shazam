@@ -1,10 +1,10 @@
+python
 numpy
 pandas
 librosa
 matplotlib
 scipy
-msvcrt
+# msvcrt
 playsound
 sounddevice
-pyaudio
-wave
+# PyAudio

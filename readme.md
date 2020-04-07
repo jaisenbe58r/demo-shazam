@@ -99,13 +99,11 @@ git clone https://github.com/jaisenbe58r/demo-shazam.git
 
 En El archivo requirements.txt se puede encontrar todas las dependencias:
 
-* python 3.7
 * numpy
 * pandas
 * librosa
 * matplotlib
 * scipy
-* msvcrt
 * playsound
 * sounddevice
 * pyaudio
@@ -116,6 +114,10 @@ Se puede instalar el paquete completo de dependencias de la siguiente manera:
 ```
 pip install -r requirements.txt
 ```
+
+Surge un problema en la instalación de pyaudio para versiones de python mayores a la 3.5.
+En el siguiente [link](https://stackoverflow.com/questions/52283840/i-cant-install-pyaudio-on-windows-how-to-solve-error-microsoft-visual-c-14) podreis encontrar la solución para instalar el paquete de python.
+También, como solución, podeis instalarlo desde el entorno de anaconda para el environment donde se va a desplegar la aplicación.
 
 
 ## Ejecutando la App ⚙️

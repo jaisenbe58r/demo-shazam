@@ -13,6 +13,15 @@ Como comentabamos
 ![Fingerprint Audio a clasificar](/info/images/Default.png)
 
 
+## How is it work
+
+Me he basado en el ariticulo "An Industrial-Strength Audio Search Algorithm" publicado por Avery Li-Chun Wang. Podéis leerlo en el siguiente enlace: [here](https://www.ee.columbia.edu/~dpwe/papers/Wang03-shazam.pdf)
+
+Me he basado en el siguiente tutorial para comprender el manejo de señales de audio desde python:
+
+[here](https://musicinformationretrieval.com/index.html)
+
+
 ## Comenzando 🚀
 
 _Estas instrucciones te permitirán obtener una copia del proyecto en funcionamiento en tu máquina local para propósitos de desarrollo y pruebas._
@@ -22,10 +31,23 @@ Mira **Deployment** para conocer como desplegar el proyecto.
 
 ### Pre-requisitos 📋
 
-_Que cosas necesitas para instalar el software y como instalarlas_
+En El archivo requirements.txt se puede encontrar todas las dependencias:
+
+* numpy
+* pandas
+* librosa
+* matplotlib
+* scipy
+* msvcrt
+* playsound
+* sounddevice
+* pyaudio
+* wave
+
+Se puede instalar el paquete completo de dependencias de la siguiente manera:
 
 ```
-Da un ejemplo
+pip install -r requirements.txt
 ```
 
 ### Instalación 🔧
@@ -66,21 +88,12 @@ _Explica que verifican estas pruebas y por qué_
 Da un ejemplo
 ```
 
-## Despliegue 📦
-
-_Agrega notas adicionales sobre como hacer deploy_
-
-## Construido con 🛠️
-
-_Menciona las herramientas que utilizaste para crear tu proyecto_
-
-* [Dropwizard](http://www.dropwizard.io/1.0.2/docs/) - El framework web usado
-* [Maven](https://maven.apache.org/) - Manejador de dependencias
-* [ROME](https://rometools.github.io/rome/) - Usado para generar RSS
 
 ## Contribuyendo 🖇️
 
-Por favor lee el [CONTRIBUTING.md](https://gist.github.com/villanuevand/xxxxxx) para detalles de nuestro código de conducta, y el proceso para enviarnos pull requests.
+* Si desea contribuir al código, crea un pull request
+* Si encuentra algún error, crea un issue
+
 
 ## Wiki 📖
 
@@ -92,25 +105,13 @@ Usamos [SemVer](http://semver.org/) para el versionado. Para todas las versiones
 
 ## Autores ✒️
 
-_Menciona a todos aquellos que ayudaron a levantar el proyecto desde sus inicios_
+* **Jaime Sendra Berenguer** - *Data Scientist* - [jaisenbe58r](https://github.com/jaisenbe58r) - [linkedin](www.linkedin.com/in/jaisenbe)
 
-* **Andrés Villanueva** - *Trabajo Inicial* - [villanuevand](https://github.com/villanuevand)
-* **Fulanito Detal** - *Documentación* - [fulanitodetal](#fulanito-de-tal)
+También puedes mirar la lista de todos los [contribuyentes](https://github.com/jaisenbe58r/demo-shazam/graphs/contributors) quíenes han participado en este proyecto. 
 
-También puedes mirar la lista de todos los [contribuyentes](https://github.com/your/project/contributors) quíenes han participado en este proyecto. 
 
 ## Licencia 📄
 
-Este proyecto está bajo la Licencia (Tu Licencia) - mira el archivo [LICENSE.md](LICENSE.md) para detalles
-
-## Expresiones de Gratitud 🎁
-
-* Comenta a otros sobre este proyecto 📢
-* Invita una cerveza 🍺 o un café ☕ a alguien del equipo. 
-* Da las gracias públicamente 🤓.
-* etc.
+Este proyecto está bajo la Licencia MIT Lıcense - mira el archivo [LICENSE.md](LICENSE.md) para detalles
 
 
-
----
-⌨️ con ❤️ por [Villanuevand](https://github.com/Villanuevand) 😊

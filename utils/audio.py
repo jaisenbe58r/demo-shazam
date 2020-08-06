@@ -11,7 +11,7 @@ from playsound import playsound
 
 
 def play_audio(filename):
-    print('Escuchando ...... ')
+    print('Escuchando ......')
     playsound(filename)
 
 
